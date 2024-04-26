@@ -22,3 +22,6 @@
 26/04/24 14:13:40 - INFO - TwitchChannelPointsMiner.classes.entities.Streamer - [set_online]: Streamer(username=loot_bounty, channel_id=1018552555, channel_points=300) is Online!
 26/04/24 14:15:57 - INFO - TwitchChannelPointsMiner.classes.WebSocketsPool - [on_message]: +10 → Streamer(username=lootraiider, channel_id=1005578968, channel_points=10.23k) - Reason: WATCH.
 26/04/24 14:20:57 - INFO - TwitchChannelPointsMiner.classes.WebSocketsPool - [on_message]: +10 → Streamer(username=lootraiider, channel_id=1005578968, channel_points=10.24k) - Reason: WATCH.
+26/04/24 14:25:59 - INFO - TwitchChannelPointsMiner.classes.WebSocketsPool - [on_message]: +10 → Streamer(username=lootraiider, channel_id=1005578968, channel_points=10.25k) - Reason: WATCH.
+26/04/24 14:25:59 - INFO - TwitchChannelPointsMiner.classes.Twitch - [claim_bonus]: Claiming the bonus for Streamer(username=lootraiider, channel_id=1005578968, channel_points=10.25k)!
+26/04/24 14:26:00 - INFO - TwitchChannelPointsMiner.classes.WebSocketsPool - [on_message]: +50 → Streamer(username=lootraiider, channel_id=1005578968, channel_points=10.3k) - Reason: CLAIM.
