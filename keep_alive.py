@@ -59,4 +59,11 @@ def get_points(id):
     res = conn.getresponse()
     data = res.read()
 
-    return str(json.loads(data.decode("utf-8"))["points"])
+    returnString = ""
+
+    try:
+        returnString = str(json.loads(data.decode("utf-8"))["points"])
+    except:
+        returnString = "-"
+
+    return returnString
