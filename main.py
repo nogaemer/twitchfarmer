@@ -15,7 +15,7 @@ from TwitchChannelPointsMiner.classes.entities.Streamer import Streamer, Streame
 from keep_alive import keep_alive
 import os
 
-keep_alive()
+keep_alive(["lootraiider", "loot_treasure", "loot_bounty"])
 
 twitch_miner = TwitchChannelPointsMiner(
     username=os.environ.get('username'),
