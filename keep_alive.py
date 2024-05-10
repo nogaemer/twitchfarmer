@@ -13,12 +13,12 @@ app = Flask(__name__)
 def buid_html():
     content = ("<!DOCTYPE html> <html lang=\"en\">"
                "<head>"
-                "<meta charset=\"UTF-8\">"
-                "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
-                "<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">"
-                "<title>HTML 5 Boilerplate</title>"
-              "</head>"
-              "<body>")
+               "<meta charset=\"UTF-8\">"
+               "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+               "<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">"
+               "<title>HTML 5 Boilerplate</title>"
+               "</head>"
+               "<body>")
 
     for channel in channels:
         cannel_id = channels_by_name(channel)
@@ -31,33 +31,34 @@ def buid_html():
                     + get_cards(cannel_id) + "</div></div>")
 
     content += ("<script> function execute(channelId, id) {"
-    "const myHeaders = new Headers();"
-    "myHeaders.append(\"Authorization\", \"Bearer " + os.environ['STREAMELEMENTS_TOKEN'] + "\");"
-    
-    "const requestOptions = {"
-      "method: \"POST\","
-      "headers: myHeaders,"
-      "redirect: \"follow\""
-    "};"
-
-    "fetch('https://api.streamelements.com/kappa/v2/store/' + channelId + '/redemptions/' + id + '', requestOptions)"
-        ".then((response) => response.json())"
-        ".then((responseData) => {"
-            "const accessCode = getAccessCode(responseData);"
-            "if (accessCode) {"
-                "alert(\"Extracted accessCode:\", accessCode);"
-            "} else {"
-                "console.log(responseData);"
-            "}"
-        "}).catch((error) => console.log(responseData));}"
-                                                                                           
-    "function getAccessCode(responseData) {"
-        "if (responseData && typeof responseData === 'object' && responseData.hasOwnProperty('accessCode')) {"
-            "return responseData.accessCode;"
-        "} else {"
-            "alert('Couldnt extract code');"
-            "return null;"
-        "}}</script></body></html>")
+                "const myHeaders = new Headers();"
+                "myHeaders.append(\"Authorization\", \"Bearer " + os.environ['STREAMELEMENTS_TOKEN'] + "\");"
+                "const requestOptions = {"
+                    "method: \"POST\","
+                    "headers: myHeaders,"
+                    "redirect: \"follow\""
+                "};"
+                
+                "fetch('https://api.streamelements.com/kappa/v2/store/' + channelId + '/redemptions/' + id + '', requestOptions)"
+                    ".then((response) => response.json())"
+                    ".then((responseData) => {"
+                        "const accessCode = getAccessCode(responseData);"
+                            "if (accessCode) {"
+                            "alert(accessCode);"
+                            "console.log(accessCode);"
+                            "} else {"
+                            "console.log(responseData);"
+                            "}"
+                    "}).catch((error) => console.log(responseData));"
+                "}"
+                
+                "function getAccessCode(responseData) {"
+                    "if (responseData && typeof responseData === 'object' && responseData.hasOwnProperty('accessCode')) {"
+                        "return responseData.accessCode;"
+                    "} else {"
+                        "alert('Couldnt extract code');"
+                        "return null;"
+                "}}</script></body></html>")
 
     return content
 
@@ -139,7 +140,6 @@ def get_cards(id):
             if (card["enabled"] == False):
                 continue
 
-            print(card["name"])
             content += (
                 get_card_html(
                     card["name"],
@@ -147,6 +147,7 @@ def get_cards(id):
                     card["_id"],
                     card["channel"])
             )
+        print("received cards")
     except:
         print("couldn't get cards")
 
