@@ -1,6 +1,7 @@
 import http.client
 import json
 import os
+import time
 from threading import Thread
 
 from flask import Flask
@@ -9,8 +10,15 @@ import CardHTML
 
 app = Flask(__name__)
 
+last = 0
 
 def buid_html():
+    global content
+    global last
+    
+    if time.time() - last < 60:
+        return "Wait 1 minute before refreshing"
+
     content = ("<!DOCTYPE html> <html lang=\"en\">"
                "<head>"
                "<meta charset=\"UTF-8\">"
@@ -60,12 +68,15 @@ def buid_html():
                         "return null;"
                 "}}</script></body></html>")
 
+    last = time.time()
+
     return content
 
 
 @app.route('/')
 def index():
-    return buid_html()
+    buid_html()
+    return content
 
 
 def run():
@@ -147,7 +158,6 @@ def get_cards(id):
                     card["_id"],
                     card["channel"])
             )
-        print("received cards")
     except:
         print("couldn't get cards")
 
