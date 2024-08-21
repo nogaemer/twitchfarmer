@@ -83,6 +83,7 @@ twitch_miner = TwitchChannelPointsMiner(
 twitch_miner.mine(
   [
     Streamer("lootraiider"),
+    Streamer("coinhunterofficial"),
     Streamer("loot_rewards"),
     Streamer("loot_bounty")
   ],  # Array of streamers (order = priority)
