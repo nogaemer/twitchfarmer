@@ -178,7 +178,7 @@ class Card:
 
 def get_card_html(title, description, src, id, channel_id):
     return ("<div style=\"border-radius: 20px; background-color: rgb(208, 208, 208); padding: 20px;display: "
-            "flex;width: 300px;flex-direction: column;gap: 20px;\">"
+            "flex;max-width: 440px;flex-direction: column;gap: 20px;\">"
             + CardHTML.title_html(title)
             + CardHTML.description_html(description)
             + CardHTML.img_html(src)
