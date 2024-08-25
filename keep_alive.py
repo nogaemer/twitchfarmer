@@ -26,7 +26,10 @@ def buid_html():
                "<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">"
                "<title>HTML 5 Boilerplate</title>"
                "</head>"
-               "<body>")
+               "<body>"
+               "<h1 style=\"font-size: 50px;margin: 0;text-align: center;font-family: 'Manrope', sans-serif;font-weight: bold;\">" +
+               os.environ['username'] + "</h1>"
+               "<br> <br>")
 
     for channel in channels:
         cannel_id = channels_by_name(channel)
@@ -154,6 +157,7 @@ def get_cards(id):
             content += (
                 get_card_html(
                     card["name"],
+                    card["description"],
                     card["thumbnail"],
                     card["_id"],
                     card["channel"])
@@ -172,10 +176,11 @@ class Card:
         self.channel_id = channel_id
 
 
-def get_card_html(title, src, id, channel_id):
+def get_card_html(title, description, src, id, channel_id):
     return ("<div style=\"border-radius: 20px; background-color: rgb(208, 208, 208); padding: 20px;display: "
             "flex;width: 300px;flex-direction: column;gap: 20px;\">"
             + CardHTML.title_html(title)
+            + CardHTML.description_html(description)
             + CardHTML.img_html(src)
             + CardHTML.button_html(id, channel_id)
             + "</div>")

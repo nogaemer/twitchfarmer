@@ -3,7 +3,11 @@ def img_html(src):
 
 
 def title_html(text):
-    return ("<p style=\"font-size: 25px;margin: 0;text-align: center;font-family: 'Manrope', sans-serif;font-weight: "
+    return ("<h1 style=\"font-size: 30px;margin: 0;text-align: center;font-family: 'Manrope', sans-serif;font-weight: "
+            "bold;\">") + text + "</p>"
+
+def description_html(text):
+    return ("<p style=\"font-size: 20px;margin: 0;text-align: center;font-family: 'Manrope', sans-serif;font-weight: "
             "bold;\">") + text + "</p>"
 
 
