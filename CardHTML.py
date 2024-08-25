@@ -1,5 +1,5 @@
 def img_html(src):
-    return "<img src=\"" + src + "\" style=\"width: inherit;border-radius: 20px;\" alt=\"\">"
+    return "<img src=\"" + src + "\" style=\"width: 400px;border-radius: 20px;\" alt=\"\">"
 
 
 def title_html(text):
