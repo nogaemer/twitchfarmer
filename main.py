@@ -15,7 +15,7 @@ from TwitchChannelPointsMiner.classes.entities.Streamer import Streamer, Streame
 from keep_alive import keep_alive
 import os
 
-keep_alive(["lootraiider", "loot_rewards", "loot_bounty", "loot_treasure"])
+keep_alive(["lootraiider", "loot_rewards", "loot_bounty", "loot_treasure", "coinhunterofficial"])
 
 twitch_miner = TwitchChannelPointsMiner(
     username=os.environ.get('username'),
@@ -83,6 +83,7 @@ twitch_miner = TwitchChannelPointsMiner(
 twitch_miner.mine(
   [
     Streamer("lootraiider"),
+    Streamer("coinhunterofficial"),
     Streamer("loot_rewards"),
     Streamer("loot_bounty")
   ],  # Array of streamers (order = priority)
