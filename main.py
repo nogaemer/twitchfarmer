@@ -85,7 +85,8 @@ twitch_miner.mine(
     Streamer("lootraiider"),
     Streamer("coinhunterofficial"),
     Streamer("loot_rewards"),
-    Streamer("loot_bounty")
+    Streamer("loot_bounty"),
+    Streamer("loot_treasure")
   ],  # Array of streamers (order = priority)
   followers=False,  # Automatic download the list of your followers
   followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
